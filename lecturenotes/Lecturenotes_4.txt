@@ -1,0 +1,33 @@
+Lecturenotes_4
+
+Marching cubes
+cell defined by four corners
+v1 v2 v3 v4 
+
+Bilinear Patch
+- interpolate the points, then the lines
+- Ptop = v1 + s(v2 - v1)
+- Pbot = v4 + s(v3 - v4)
+- Psurf = Pbot + t(Ptop - Pbot)
+
+s^2 = (v4 - v1)/(v2 - v1 + v4 - v3)
+t^2 = (v4 - v2)/(v2 - v1 + v4 - v3)
+
+Resampling:
+trilinear interpolation
+
+Sparse Data Interpolation: needed for prog 1:
+Shepard's Interpolation:
+- inverse distance based idea
+- function of location: f(x,y) = ?
+- Fj => measurement
+- dj => distance from Fj to xy
+- calculte weight and stuff
+- shepard's is really general, it works for any-D data 2-D 3-D 4-D ... same thing
+- add more variables corresponding to the dimensionality, the form still stays the same
+- Shepard's can be applied to scalar and vector values
+- problem of shepards - temperature - smoothly change good, can't assume the same for all kind of data
+- issues with shepards - Mathematically its fine but physically 
+
+
+

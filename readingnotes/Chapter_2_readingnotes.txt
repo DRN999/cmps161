@@ -1,0 +1,78 @@
+Data Visualization  Chapter 2 Notes
+
+- For many readers, computer graphics might not be a new thing but data visualization is new 
+- In this chapter, they will discuss the difference between just computer graphics and data visualization 
+- this chapter introduces data vis in an informal manner and from the perspective of computer graphics that
+we are familiar to 
+- examples written in c++ OpenGL 
+- the example will show the viualization pipeline from defining the data to producing a rendered image 
+- important concepts of data visualization:
+	- datasets 
+	- sampling 
+	- mapping 
+	- rendering 
+- example also introduces to graphics rendering: basically all the things we did in 160/L 
+- make readers aware of design decisions(trade-offs) that are commonly encountered in visualization 
+
+2.1 A simple example:
+- drawing a graph of 2 variables 
+- the question to be raised is: 
+	- how should we represent the function f and te domains X and Y of ots variables? 
+	- how should we represent the surface S to visualize? 
+	- how many points are there to be drawn? 
+	- what kind of graphic object should we use to do the drawing? 
+- essentially all these question revolve around the idea with issues with representing continuous data 
+- computer algorithm can only perform a finite number of operations 
+- and on top of that there are only finite number of pixels on the screen 
+- the example used equally distributed points to represent the f(x,y) = e ^ -(x^2 + y^2) in between 30x30 
+sample points to represent the multiple data 
+- in this example we assumed that function f can be visualized at every point in domain D 
+- but this assumption might be too restrictive in practice 
+- EX: if the values of function f originated from experimental data, measurements, simulations, or other data sources 
+that is too expensive to visualize 
+- if that is the case, then the most natural solution is to store the explicit values of f into a data structure 
+- this data structure can be a matrix of real numbers 
+- this method forms a fundamental concept in data visualization: a dataset 
+- a dataset represents eiter a sampling of some originally continuous quantity 
+- like the case in f(x,y) or some purely discrete quantity 
+- the problem with this entire method, when we have less input density overall, we have a lower quality 
+output, much more chunky expecially at the top where it is pointy where as it should be much smoother 
+- the solution to this is the by incresing the sample density where the functions's heigher order derivatives 
+have higher values 
+- this is good because we don't waste processing time on places that are already smooth 
+- for this example we can make it so that the sampling size increases inverse-proportionally to the distance from 
+the origin of the map 
+- however this quality comes with a price, and the we can no longer use the original function because we do not have
+uniform data density, therefore we must store the sampling points of the function into a dataset 
+
+2.2 Graphic rendering basics:
+- discuss how we actually render the heightplot constructed from the dataset of the previous section 
+- basic techniques are concepts 
+- these techniques are viable in a large portion of data visualization discussed in this book 
+
+- rendering equation:
+- for a given point, the rendering equation describes the relationship between the incoming light, the outgoing light, and
+the material properties at that point 
+- in pratice, several rendering equations are used, which can approximate the lighting effects to various realism 
+- 2 common approximation method: radiosity methods(good for soft shadows) and raytracing methods(great for shiny surfaces) 
+- however both methods are relatively expensive to compute, even for a simple 3d rendering 
+- a more effcient approach is to simplify the rendering equation so that it relates to the illumination of the given 
+scene point only, and not globally 
+- such approachs are called illumination methods, since the rendering equation solves for the illumination locally for 
+every scene point 
+- "that's pretty gay" - Jonathan Jang 
+- phong lighting method, assumes the scene to be rendered of opague objects in void space 
+- "the combination of cough drops and toothpaste tastes like cancer, and seg-faults" - Jonathan Jang 
+
+2.2 - 2.7:
+- basically a bunch of shit we did in 160 with webgl except this time its win OpenGL c++
+- flat shading -> smoothshading 
+- texture mapping 
+- etc. 
+
+2.8 Conclusion: 
+- acquire the data of intrest into a discrete dataset 
+- map this dataset to graphics primitives 
+- render the primitives to obtain the desired image 
+
+

@@ -1,0 +1,98 @@
+CMPS 161 lecture notes
+
+When data reaches to a certain point, you need visualization.
+When data is too sparse, there are some other obvious problems
+
+First prog: deals with case with too little data and still need to visualize it.
+
+Main ideas: 
+- gain insight - perception and cognition 
+- make decisions
+- convey specific messages
+
+we mainly use perception, cognition is more on the realm of psycology.
+
+natural spacial mapping
+
+Spatial -> scientific visualization
+just a classfication of techniques
+
+Non-spacial -> abstract data -> infovis visualization
+
+Visualization if only one way to map data:
+Sonification (map data to sound), and other ways the present datas
+Think about subliminal messages
+
+ultimate goal is to gain insight on data by visualizing it.
+
+
+Scientific Visualization:
+- relatively young field 1987 - 89
+- came from things like medical images
+- CFD computational flow dynamics
+- CAD/CAM
+- manufacturing
+
+During that time, x-ray was common, CAT-SCAN was new
+
+Side track: RayTracing:
+shoot a ray for each pixel to display
+CAT-SCAN get 3d scaler volume of bones -> question is how to visualize it
+
+CFD computational flow dynamic:
+- design of air flow, aerodynamics
+- plate techtonics, anything that moves can be modeled using CFD
+
+Dimension space/time
+0D(one point),1D, 2D, 3D, T
+
+Degree
+Scaler, vecor, tensor
+
+Dimension vs Degree, classify datasets and visualize them accordingly
+Ex. 2d & vector -> specific visualization of 2d vector
+
+Space orginization:
+- can be organized as a grid
+- can also be unstructured -> deal with abstract data sets
+
+
+0D: point wise data set:
+- just one data, 68degree
+- color -> where to put this red? -> need a shape
+- just write 68 - actually very good visualization, done, no confusion
+
+Lets say in this Eng 2 building with 50 rooms with different temperature.
+-> How would you visualize it?
+- visualize as a cube divided with boxes
+- map temperature as color -> temperature corresponds to the rgb value of the room
+- problems with design? -> can't see inside if filled with full color, even if ray traced it would have mized color
+- depends on what kind of anwser you want from the infovis
+
+Scaler, Vector, Tensor
+#, [#, #, ...], velocity
+
+2dVector
+Vx, Vy
+direction, magnitude
+
+Generally, you get data from different discipline, so you need to learn it and present it in the same way
+
+Glyph vs icon: 
+- Glyph retains the shape but changes depending on certain data changes
+- plate techtonics, tensor glyphs
+
+0D -> glpyhs
+
+[GPA, GREv, GREq, GREa, RI, R/NR]
+The pentagon yawarakaatamajuku/persona/jiisan thing (apparently called starplat)
+Chernoff faces
+Depending on the placment, might change the emphasis on the data
+
+
+Prog 1:
+Generate velocity fields
+
+
+
+

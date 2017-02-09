@@ -1,0 +1,5 @@
+Lecture Notes 1:
+
+When trying to find "trend"
+
+Kernal density estimation

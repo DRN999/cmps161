@@ -1,0 +1,51 @@
+CMPS 161 notes alepan's anecdotes of research days feelsgoodman 
+
+- create system of doing environmental science 
+- visualization of environmental datasets 
+- in the early 90s, internet was relatively new 
+- get data into databases, need to provide an interface to access the database 
+- REINAS - spanish:queen - Realtime environmental blah blah 
+- their approach, users not familiar with tech, need to make interface that they can get educated 
+- created a vis, so that it look exactly what they are used to, 2D vis 
+- artificial, but if move the mouse, it can rotate, its actually 3D, can show volume information rather 
+than just a slice 
+- if working with people in the medical field, they really consider accuracy 
+- some guys didn't want to use computers, need to make a metaphor 
+- define 3 classes of users - forecasters, scientist, recreational users 
+- forecaster, vis that is customized for information that they want, pressure maps, etc. 
+- scientist - want to understand the data, regular data, but also simulation data 
+- data simulation - initial condition(need to update), run similation, update or pretty soon its going to divert from reality 
+- scientist - had to create some kind of metaphor for them 
+- recreational - commertial users - just want the information 
+
+- scientist - what metaphor - imagine the database is right in front of you, but it is invisable, 
+need to paint it to make it visable, the color corresponds to the different kind of vis 
+- spray rendering - partical spraying is called smart particles, spraying these smart particles into data 
+depending on te data it hits, it performs differently, dust particles are sent to data space 
+shoot out a bunch of particles, make this data volume visable by coloring it 
+
+- generalize the idea of smart particle - target can be particular data value  [small set of targets]
+- behaviour when encounter data [fairly small size of behaviours]
+- update position  [what does this particle do next]
+- termination condition - die/birth generated where the point of the spray can is 
+
+Using this construction, how can we define smart particles to represent visualizations that look like isosurfaces? 
+
+How do we do streamlines with this technique?
+- target - wherever you end of being - seed point 
+- behaviour - simply connect the previous position with the current position with a line segment 
+- update - integration - can integrate it if the line is getting shorter and shorter, or stop and vise-versa 
+
+- how do we represent uncertainty?
+- std deviation 	#
+- range 			# #
+- conflicting data(alternative facts lel) 	# # ... # or can be just guessing 
+
+simplist case: standard deviation 
+
+heatmap -> rbg ALPHA 
+contours 
+iso surfaces 
+
+
+

@@ -1,0 +1,81 @@
+CMPS 161 Lecture 
+
+- Isosurface, surface of entire volume
+- Isosurface can also take up more space than the original input
+
+Direct Volume Rendering:
+- no intermidiate geometry
+- accumulate information along ID line through volume
+- view dependent *important, when viewpoint changes, basically need to recalculate everything
+- uses all data vs onlysee some data
+- can have "fuzzy" vs sharp appearance
+
+2 general approaches:
+1- image orser - raycasting
+2- object order - splatting
+variations: 
+1- texture slabs
+2- fvr - fourier volume rendering
+
+B = INTEGRAL (I * D * cos(THETA) * e^(-T INTEGRAL(Data)))
+IDcostheta <- diffuse lighting
+basically, calculate diffuse lighting for the volume and gets summated
+
+Levoy 88
+
+3D - 3D color c(x, y, z) - DVR
+   - 3D opacity ALPHA(x, y, z) ^
+
+C(x,y,z) = determined by gradiant and lighting
+ALPHA = density
+
+c(R)= SIGMA_k = 0_K(c(R,k) ALPHA(R,k) k/11_j=kh_ * (1 - ALPHA_j(R, i)))   
+
+R,k - > kth voxel along ray
+c(R, 0) -> color of background
+ALPHA(R, 0) -> 1
+evaluated back to front
+
+Varution and Issues:
+1) MIP - > maximum intensity projection
+	a) max
+	b) ave 
+	c) stat. 
+	d) dist. 
+2) sampling
+	a) regular sampling
+	b) cell face interpolation
+
+regular sampling 	- start when enter volume
+					- start at eye location
+					- this difference is not as significant as a) & b) 
+
+3) parallel perspective projection - later
+
+4) data vs color*
+- recommended interpolate the data first then map it on with color
+- color in most cases is continuous, if interpolate color, might end of with color that
+is necceseraly meaningful
+- interpolating the data will remove that problem
+
+5) termination
+- accumulated opacity
+
+Object Ordered Approach:
+For @ voxel 
+- project ("throw") voxel to image plane
+- apply filtering to splat 
+- alpha blend - contributing of voxels sumed up together
+
+either front to back or back to front 
+
+Coherent Projection:
+- object order DVR with
+- parallel projection 
+
+Allen van Gelder FEELSGELDERMAN
+
+
+
+
+

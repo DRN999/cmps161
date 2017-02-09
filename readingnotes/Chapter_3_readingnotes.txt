@@ -1,0 +1,92 @@
+Data Visualization Chapter 3 notes
+
+- expand discussion from previous chapter on discrete data representation and approximation 
+- first: detail the notions of continuous data sampling and reconstruction 
+- introduce basis functions, discrete meshes, and cells 
+- also, means  of constructing piecewise continuous approximations from the sampled data 
+- now we present these data using practices of data visualization and explain their advantages, limitation, and constaints
+
+3.1 Continuous Data 
+- what is continuous data? 
+- the main foal of visualization is to produce pictures that enable end users get insight into data that describes 
+various phenomena or processes, including both natural and human-controlled phenomena
+- such phenomena are modeled in terms of various physical quantities 
+- these quantities can be directly measured, or computed 
+- from of pov of data representation. these quantities can be classified in 2 fundamentally different categories:
+	- intrinsically continuous 
+	- intrinsically discrete 
+- Ex for continuous: pressure, temperature, position, speed, density, force, color, light intensity, and electromagnetic radiation 
+- Ex for discrete: hypermedia, text and images, contents of a web page, software source code, plain text in many different types 
+of documents, and various types of database records 
+- this fundamental difference between continuous data and discrete data causes many, often subtle, constaints and choices in
+designing an effective and efficient visualization method 
+- continuous data, whether coming in its original continuous representation or represented as some sampled approximation 
+is a subject of a different branch of data visualization 
+- this branch is traditionally called scientific visualization, or for short: scivis 
+- the other branch detecated to the discrete data is a relatively young branch in visualization called 
+information visualization, or for short: infovis 
+- this book will mainly focus on scivis methods and techniques, with the exception of chapter 11 
+ 
+3.1.2 Mathematical Continuity:
+- mathematically, continuous data can be modeled as a function: f:D -> C 
+- in related terminology f is called, d-dimentional, or d-variate, c-value function 
+- in visualization apps, f or its sampled counterpart, is sometimes called a field 
+- what does continuity mean in the intuitive sense? 
+- in just plain terms, a function is continuous if the graph of the function is a connected surface 
+withouts holes or jumps 
+- section 3.2 is probably the nuts, seeing how many times its referenced in 3.1 
+
+3.1.3 Dimensions: Geometry, Topology, and Attributes:
+- The differece between Geomtric dimension and topological dimension is best understood by example 
+- triplet D_ = (D, C, f) defines a continuous dataset 
+- D refers to the domain, geometrically, the dimension can be represented as R^d 
+- can think of topological dimension as the number of independent variables that we need to represent domain D 
+- the last concept commonly used in describing functions and spaces is the co-dimension 
+= using the previous notation: the co-dimension of an object of topological dimension s and geomtric dimension d 
+is the difference of those two which is: d - s 
+- to simplfy implementation, virtually all data-visualization apps fix the geomtric dimension to d = 3, three dimensional 
+- this makes the code for the app simple and uniform, but sufficiently generic as well 
+- therefore the only dimension that really varies in visualization datasets, is the topological dimensiona 
+- in practice, topological dimension will differ in 3 ways: 1, 2, and 3, each corresponding to line, surface,
+and volume datasets respectively 
+- topological dimension is also refered to as dataset dimension 
+- topological dimension = 4 when time is involved 
+- function values are usually called dataset attribute 
+- attributes are discussed later 
+
+3.2 Sampled Data:
+- scientific visualization aims at displaying various properties of function 
+- however we do not always avail of data in its continuous, functional, representation 
+- on top of that doing operations on data is difficult, and not efficient to perform on continuous data represenation 
+- most data visualization works with sampled data representation, or sampled datasets 
+- sampling: given a continuous dataset, we have to be able to produce sampled data from it 
+- reconstruction: given a sample dataset, we have to be able to recover an (approximate) version of the orginal continuous data 
+- sampling and reconstruction are intimately connected operations 
+- reconstruction operation involves specifying the values of the function between its sample points, using these
+sampled value, by using a technique called interpolation 
+
+- to be in practice, a sampled dataset should comply with several requirements:
+	- accurate - one should be able to control the production of a sampled dataset Ds from continuous dataset Dc such 
+	that Dc can be reconstructed from Ds with some user specified errors 
+	- minimal - Ds contains he least number of sample points needed to ensure a reconstruction with the desired error 
+	- generic - can easily replace the various data-processing operations made for the continuous Dc with the equalivant 
+	counterparts for the sampled Ds 
+	- efficient - both the reconstruction operation and the data-processing operation that will be performed on Ds can 
+	be done efficiently from an algorithmic point of view 
+	- simple - design a resonably simple software implementation of both Ds and the operations we want to perform on it 
+	
+- Interpolation: 
+- consider the reconstruction of a continuous approximation from the sampled data 
+- define reconstruction as follow: given a sampled dataset, {p_i, f_i} consisting of set of N sample points 
+pi setOf D and sample value fi setOf C, we want to produce a continuous function ~f : D -> C that approximates
+the original f 
+- reconstruted function should equal the original one at all sample points, ie ~f(p_i) = f(p_i) = f_i 
+- ~f = SUMMATION_i=1_N_(f_i PHI_i), where PHI_i: D -> C are called basis function or interpolation function 
+- in other words, we have defined the reconstruction operation using a weighted sum of a given set of basis functions
+PHI_i, where the weights are exactly our sample values f_i
+- since we want that ~f = f_j, for all sample points p_j: 
+- SUMMANTION_i=1_N_(f_i PHI_i(p_j)) = f_i forAll j 
+-  
+
+
+

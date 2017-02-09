@@ -1,0 +1,23 @@
+CMPS161 Lecure 3
+
+Visual Mapping - techniques
+1 - Color *most common, typically use for the most important factor
+2 - Shape
+(Arrow glyph ->)
+can also double code by making both the color and length express the magnitude of the vector
+3 - What else? -> Position / orientation / size
+4 - Opacity / transparancy
+5 - Texturing 
+
+Color Models:
+- RGB - 
+- HSV - Cone shaped model
+
+- ex. vector [# # #] <- can express this with RGB or HSV, this is bad, the interpretation is much harder
+- ex. if there is a fourth data like magnitude, since magnitude is scaler, it is much easier to represent it with color
+
+color mapping (pseudo-coloring)
+1 - "rainbow" color mapping 
+2 - gray-scale mappping 
+
+

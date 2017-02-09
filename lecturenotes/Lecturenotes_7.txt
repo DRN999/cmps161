@@ -1,0 +1,5 @@
+CMPS 161 Lecture Notes 7
+
+A = RI
+
+
