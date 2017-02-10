@@ -86,7 +86,10 @@ the original f
 PHI_i, where the weights are exactly our sample values f_i
 - since we want that ~f = f_j, for all sample points p_j: 
 - SUMMANTION_i=1_N_(f_i PHI_i(p_j)) = f_i forAll j 
--  
+- Grid and cells:
+- to reconstruct a sampled function, we can use different basis functions 
+- a grid, also called mesh, is a subdivision of a given domain into a collection of cells, also called elements 
+- 
 
 
 
