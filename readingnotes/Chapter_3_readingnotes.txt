@@ -89,7 +89,31 @@ PHI_i, where the weights are exactly our sample values f_i
 - Grid and cells:
 - to reconstruct a sampled function, we can use different basis functions 
 - a grid, also called mesh, is a subdivision of a given domain into a collection of cells, also called elements 
+- define the simplest set of basis function, the constant basis functions 
+- for a grid with N-cells,we define the basis functions PHI_0_1 as follows:
+- PHI_0_1 = {
+				1, x setOf c_i, 
+				0, x !setOf c_i
+			}
+- this equation the superscript 0 denotes the our basis functions are constant, i.e., of zero-order continuity 
+- these basis functions are orthogonal and normal 
+- the piecewise constant interpolation is also called nearest-neighbor interpolation 
+- constant basis functions are simple to implement and have virtually no computational cost 
+- they work with any cell shape  and in any dimension 
+- however this function provide are relatively poor-staircase like approximation ~f of original f 
+- ~f is piece-wise constant but have discontinuities at the borders 
+- the next simplest basis functions beyond the constant ones are the linear basis function 
+- let us consider a single quandrilateral cell c having the vertices (v1, v2, v3, v4) 
+- v1 = (0, 0), v2 = (1, 0), v3 = (1, 1), v4 = (1, 1) i.e. an axis-aligned square of edge size 1 with the 
+origin as its first index 
+- we call this the reference cell in R^2 (2nd dimension) 
+- D setOf R^d 
+- these coordinates of the reference cell are also called reference coordinates 
+- what should each transformation T look like? 
+- since ~f is a sum of first-order continuous basis functionm it is a first-order continuous reconstruction of the 
+four sample values f_1, f_2, f_3, f_4 defined at the cell vertices 
+- we would like now to perform exactly the same reconstruction as previously for any quadralateral cell c = (p1, p2, p3, p4)
+of some arbitrary grid, such as the height plot 
 - 
-
 
 
