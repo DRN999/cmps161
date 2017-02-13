@@ -14,12 +14,12 @@ file_input::file_input(string name)
 
 void file_input::parse_file()
 {
-	if(file.is_open())
+	if(file->is_open())
 	{
-		file >> dimension;
-		file >> n;
-		file >> m;
-		file >> m;
+		*file >> dimension;
+		*file >> n;
+		*file >> m;
+		*file >> m;
 		float temp_f = 0;
 		for(int i = 0; i < n + 1; ++i)
 		{
@@ -27,7 +27,7 @@ void file_input::parse_file()
 			{
 				for(int j = 0; j < dimension; ++j))
 				{
-					file >> temp_f;
+					*file >> temp_f;
 					res.push_back(temp);
 				}
 			}
@@ -35,7 +35,7 @@ void file_input::parse_file()
 			{
 				for(int j = 0; j < m; ++j)
 				{
-					file >> temp_f;
+					*file >> temp_f;
 					if(j < m)
 						values.push_back(temp_f);
 					else
@@ -66,8 +66,8 @@ void file_input::parse_file()
 
 void file_input::close_file()
 {
-	if(file.is_open())
-		file.close();
+	if(file->is_open())
+		file->close();
 }
 
 void file_input::open_file(string name)
@@ -78,7 +78,7 @@ void file_input::open_file(string name)
 
 void create_vtk()
 {
-	if(file.is_open())
+	if(file->is_open())
 	{
 		
 	}

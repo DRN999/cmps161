@@ -10,7 +10,7 @@ using namespace std;
 class file_input 
 {
 	private: 
-		fstream file; // the input file itself 
+		fstream* file; // the input file itself 
 		int dimension; // dimensions of the data  
 		int n, m; // the number of components and the number of coordinates per component 
 		vector<float> values; // values of the coordinate(s) 
