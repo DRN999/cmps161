@@ -33,7 +33,7 @@ void file_input::parse_file()
 			}
 			else 
 			{
-				for(int j = 0; j < m; ++j)
+				for(int j = 0; j < m + 3; ++j)
 				{
 					*file >> temp_f;
 					if(j < m)
