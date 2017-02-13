@@ -8,7 +8,8 @@ file_input::file_input()
 
 file_input::file_input(string name)
 {
-	file = new fstream(name, ios::in);
+	file = new fstream();
+	file->open(name, ios::in);
 	parse_file();
 }
 
@@ -75,7 +76,8 @@ void file_input::close_file()
 
 void file_input::open_file(string name)
 {
-	file = new fstream(name, ios_base::in);
+	file = new fstream();
+	file->open(name, ios::in);
 	parse_file();
 }
 
