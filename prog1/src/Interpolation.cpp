@@ -10,6 +10,7 @@ int main()
 	cin >> s; 
 	file_input* file = new file_input(s);
 	file->close_file();
+	delete(file);
 	return 0;
 }
 

@@ -70,7 +70,10 @@ void file_input::parse_file()
 void file_input::close_file()
 {
 	if(file->is_open())
+	{
 		file->close();
+		delete(file);
+	}
 }
 
 void file_input::open_file(string name)
