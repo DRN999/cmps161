@@ -57,7 +57,7 @@ void file_input::parse_file()
 	{
 		++check;
 		cout << *i << " ";
-		if(check%3 == 0)
+		if(check%dimension == 0)
 			cout << endl;
 	}
 	cout << endl << "res: " << endl;
