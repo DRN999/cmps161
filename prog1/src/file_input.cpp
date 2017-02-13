@@ -81,7 +81,7 @@ void file_input::open_file(string name)
 	parse_file();
 }
 
-void create_vtk()
+void file_input::create_vtk()
 {
 	if(file->is_open())
 	{
