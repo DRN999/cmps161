@@ -45,13 +45,13 @@ void file_input::parse_file()
 			}
 		}
 	} // end if file.is_open() 
-	cout << "dimension: " << dimension << endl;
+	cout << endl << "dimension: " << dimension << endl;
 	cout << "n: " << n << " m: " << m << endl;
 	cout << "values :" << endl;
 	for(vector<float>::const_iterator i = values.begin(); i != values.end(); ++i)
 		cout << *i << endl;
 	
-	cout << "coordinates: " << endl;
+	cout << endl << "coordinates: " << endl;
 	int check = 0;
 	for(vector<int>::const_iterator i = coordinates.begin(); i != coordinates.end(); ++i)
 	{
