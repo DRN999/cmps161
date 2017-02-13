@@ -20,7 +20,6 @@ void file_input::parse_file()
 		*file >> dimension;
 		*file >> n;
 		*file >> m;
-		*file >> m;
 		float temp_f = 0;
 		for(int i = 0; i < n + 1; ++i)
 		{
