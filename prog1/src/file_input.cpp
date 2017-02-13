@@ -46,8 +46,8 @@ void file_input::parse_file()
 		}
 	} // end if file.is_open() 
 	cout << endl << "dimension: " << dimension << endl;
-	cout << "n: " << n << " m: " << m << endl;
-	cout << "values :" << endl;
+	cout << endl << "n: " << n << " m: " << m << endl;
+	cout << endl << "values :" << endl;
 	for(vector<float>::const_iterator i = values.begin(); i != values.end(); ++i)
 		cout << *i << endl;
 	
