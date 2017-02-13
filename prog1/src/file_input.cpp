@@ -29,7 +29,7 @@ void file_input::parse_file()
 				for(int j = 0; j < dimension; ++j)
 				{
 					*file >> temp_f;
-					res.push_back(temp);
+					res.push_back((int)temp_f);
 				}
 			}
 			else 
@@ -85,7 +85,7 @@ void create_vtk()
 {
 	if(file->is_open())
 	{
-		
+		cout << "i dunno what to do LUL" << endl;
 	}
 }
 
