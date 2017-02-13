@@ -8,7 +8,7 @@ file_input::file_input()
 
 file_input::file_input(string name)
 {
-	file = new fstream(name, ios_base::in);
+	file = new fstream(name, ios::in);
 	parse_file();
 }
 
