@@ -25,7 +25,7 @@ void file_input::parse_file()
 		{
 			if(i == n)
 			{
-				for(int j = 0; j < dimension; ++j))
+				for(int j = 0; j < dimension; ++j)
 				{
 					*file >> temp_f;
 					res.push_back(temp);
@@ -53,13 +53,16 @@ void file_input::parse_file()
 	
 	cout << "coordinates: " << endl;
 	int check = 0;
-	for(vector<float>::const_iterator i = coordinates.begin(); i != coordinates.end(); ++i)
+	for(vector<int>::const_iterator i = coordinates.begin(); i != coordinates.end(); ++i)
 	{
 		++check;
 		cout << *i << " ";
 		if(check%3 == 0)
 			cout << endl;
 	}
+	cout << "res: " << endl;
+	for(vector<int>::const_iterator i = res.begin(); i != res.end(); ++i)
+		cout << *i << endl;
 	cout << endl;
 	
 }// End parse_file 
