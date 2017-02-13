@@ -8,7 +8,7 @@ int main()
 	string s;
 	cout << "type in the name of the file you want to convert to vtk with interpolation: ";
 	cin >> s; 
-	file_input file = new file_input(s);
+	file_input* file = new file_input(s);
 	return 0;
 }
 
