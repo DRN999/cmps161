@@ -24,7 +24,7 @@ class file_input
 		void close_file(); // close the file 
 		void open_file(string name); // open the file with the same name 
 		void create_vtk(); // exports a output vtk file 
-}
+};
 
 
 
