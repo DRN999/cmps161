@@ -3,15 +3,13 @@
 # nnakano@ucsc.edu			#
 # 1418185					#
 ######################################################################################
-# Makefile CMPS109 assignment 2
-# prog1: compiles problem1 (institute.exe)
-# prog2: compiles problem2 (scanner.exe)
-# prog3: (attemps) to compile problem 3 (problem with inheritance) (MAX_Heap.exe)
-# all: compiles all problems
+# Makefile CMPS161 prog1
+# prog1: compiles prog1 
+
+# all: compiles all 
 # clean: removes exe and object files 
-# check1: checks for memory leaks for problem 1 
-# check2: checks for memory leaks for problem 2 
-# check3: checks for memory leaks for problem 3 
+# check: checks for memory leaks
+
 ######################################################################################
 
 CXX	=	g++
