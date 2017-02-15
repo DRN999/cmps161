@@ -93,14 +93,14 @@ cell_grid* file_input::create_vtk()
 	cell_grid* ret;
 	int iter = 0;
 	double* temp[m];
-	int temp[dimension];
+	int* res_temp[dimension];
 	if(file->is_open())
 	{
 		if(dimension == 2)
-			temp = {res.at(0), res.at(1)};
+			res_temp = {res.at(0), res.at(1)};
 		else if(dimension == 3)
-			temp = {res.at(0), res.at(1), res.at(2)};
-		ret = new cell_grid(dimension, &temp);
+			res_temp = {res.at(0), res.at(1), res.at(2)};
+		ret = new cell_grid(dimension, res_temp);
 		for(int i = 0; i = n; i+=dimension)
 		{
 			for(int j = 0; j = m; j++)
