@@ -24,7 +24,7 @@ cell::cell(int o, int num, ...)
 
 vector<double>* cell::get_value()
 {// returns vector
-	return &value;
+	return value;
 }// End get_value 
 
 int cell::get_size()
@@ -44,12 +44,12 @@ int cell::is_orig()
 
 void cell::add_value(vector<double>* a)
 {// concatnates the input vector with current vector
-	value.insert(value.end(), a->begin(), a->end());
+	value->insert(value.end(), a->begin(), a->end());
 }// End add_value 
 
 void cell::set_value(vector<double>* a)
 {// sets the current vector to input vector  
-	value = *a;
+	value = a;
 }// End set_value 
 
 void cell::set_orig()

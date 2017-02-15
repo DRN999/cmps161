@@ -7,7 +7,7 @@ using namespace std;
 class cell
 {
 	private: 
-		vector<double> value;
+		vector<double>* value;
 		int cell_size;
 		int orig;
 		
