@@ -100,17 +100,17 @@ cell_grid* file_input::create_vtk()
 		{
 			for(int j = 0; j = m; j++)
 			{
-				temp[m] = value.at(iter);
+				temp[m] = values.at(iter);
 				iter++;
 			}
 			if(dimension == 2)
 			{
-				ret->set_cell(coordinates.at(i), coordinates.at(i+1), (new vector<double>()).assign(temp, temp + m));
+				ret->set_cell(coordinates.at(i), coordinates.at(i+1), (new vector<double>())->assign(temp, temp + m));
 				ret->get_cell(coordinates.at(i), coordinates.at(i+1))->set_orig();
 			}
 			else if (dimension == 3)
 			{
-				ret->set_cell(coordinates.at(i), coordinates.at(i+1), coordinates(i+2), (new vector<double>()).assign(temp, temp + m));
+				ret->set_cell(coordinates.at(i), coordinates.at(i+1), coordinates(i+2), (new vector<double>())->assign(temp, temp + m));
 				ret->get_cell(coordinates.at(i), coordinates.at(i+1), coordinates(i+2))->set_orig();
 			}
 		}

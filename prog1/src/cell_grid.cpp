@@ -11,7 +11,7 @@ cell_grid::cell_grid(int d, int* r)
 	{
 		size *= res[i];
 	}
-	grid = new cell[size];
+	grid = new cell*[size];
 	for(int i = 0; i < size; i++)
 		grid[i] = new cell();
 }
@@ -43,12 +43,12 @@ cell* cell_grid::get_cell(int x, int y, int z)
 
 vector<double>* cell_grid::get_cell_value(int x, int y)
 {// returns the value inside the cell for 2d
-	return grid[index(x,y)].get_value();
+	return grid[index(x,y)]->get_value();
 }// get_cell_value 
 
 vector<double>* cell_grid::get_cell_value(int x, int y, int z)
 {// returns the value inside the cell for 3d
-	return grid[index(x, y, z)].get_value();
+	return grid[index(x, y, z)]->get_value();
 }// End get_cell_value 
 
 void cell_grid::set_cell(int x, int y, int num, ...)
@@ -66,7 +66,7 @@ void cell_grid::set_cell(int x, int y, int num, ...)
 
 void cell_grid::set_cell(int x, int y, vector<double>* val)
 {// .. 
-	grid[index(x, y)].set_value(val);
+	grid[index(x, y)]->set_value(val);
 }// End set_cell 
 
 void cell_grid::set_cell(int x, int y, int z, int num, ...)
@@ -84,5 +84,5 @@ void cell_grid::set_cell(int x, int y, int z, int num, ...)
 
 void cell_grid::set_cell(int x, int y, int z, vector<double>* val)
 {// .. 
-	grid[index(x, y, z)].set_value(val);
+	grid[index(x, y, z)]->set_value(val);
 }// End set_cell 
