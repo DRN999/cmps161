@@ -111,12 +111,12 @@ cell_grid* file_input::create_vtk()
 			}
 			if(dimension == 2)
 			{
-				ret->set_cell(coordinates.at(i), coordinates.at(i+1), temp);
+				ret->set_cell(coordinates.at(i), coordinates.at(i+1), &temp);
 				ret->get_cell(coordinates.at(i), coordinates.at(i+1))->set_orig();
 			}
 			else if (dimension == 3)
 			{
-				ret->set_cell(coordinates.at(i), coordinates.at(i+1), coordinates.at(i+2), temp);
+				ret->set_cell(coordinates.at(i), coordinates.at(i+1), coordinates.at(i+2), &temp);
 				ret->get_cell(coordinates.at(i), coordinates.at(i+1), coordinates.at(i+2))->set_orig();
 			}
 			for(int j = 0; j < m; j++)
