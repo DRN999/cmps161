@@ -16,13 +16,13 @@ cell::cell(int o, int num, ...)
 	cell_size = 0;
 	for(int i = 0; i < num; ++i)
 	{
-		value.push_back(va_arg(ap, float));
+		value.push_back(va_arg(ap, double));
 		++cell_size;
 	}
 	va_end(ap);
 }// End Constructor 
 
-vector<float>* cell::get_value()
+vector<double>* cell::get_value()
 {// returns vector
 	return &value;
 }// End get_value 
@@ -42,12 +42,12 @@ int cell::is_orig()
 	return orig;
 }// End is_orig
 
-void cell::add_value(vector<float>* a)
+void cell::add_value(vector<double>* a)
 {// concatnates the input vector with current vector
 	value.insert(value.end(), a->begin(), a->end());
 }// End add_value 
 
-void cell::set_value(vector<float>* a)
+void cell::set_value(vector<double>* a)
 {// sets the current vector to input vector  
 	value = *a;
 }// End set_value 
