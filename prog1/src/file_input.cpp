@@ -104,7 +104,7 @@ cell_grid* file_input::create_vtk()
 		ret = new cell_grid(dimension, res_temp.data());
 		for(int i = 0; i = n; i+=dimension)
 		{
-			for(int j = 0; j = m; j++)
+			for(int j = 0; j < m; j++)
 			{
 				temp.push_back(values.at(iter));
 				iter++;
