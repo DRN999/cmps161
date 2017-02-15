@@ -95,7 +95,10 @@ cell_grid* file_input::create_vtk()
 	double* temp[m];
 	if(file->is_open())
 	{
-		ret = new cell_grid();
+		if(dimension == 2)
+			ret = new cell_grid(dimension, {res.at(0), res.at(1)});
+		else if(dimension == 3)
+			ret = new cell_grid(dimension, {res.at(0), res.at(1), res.at(2)});
 		for(int i = 0; i = n; i+=dimension)
 		{
 			for(int j = 0; j = m; j++)
