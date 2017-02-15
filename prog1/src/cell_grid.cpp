@@ -31,22 +31,22 @@ void cell_grid::interpolate_grid()
 
 cell* cell_grid::get_cell(int x, int y) 
 {// returns the cell of the index for 2d 
-	return grid[index(x, y)];
+	return &grid[index(x, y)];
 }// End get_cell 
 
 cell* cell_grid::get_cell(int x, int y, int z)
 {// returns the cell of the index for 3d 
-	return grid[index(x, y, z)];
+	return &grid[index(x, y, z)];
 }// End get_cell 
 
 vector<float>* cell_grid::get_cell_value(int x, int y)
 {// returns the value inside the cell for 2d
-	return grid[index(x,y)].get_value();
+	return &grid[index(x,y)].get_value();
 }// get_cell_value 
 
 vector<float>* cell_grid::get_cell_value(int x, int y, int z)
 {// returns the value inside the cell for 3d
-	return grid[index(x, y, z)].get_value();
+	return &grid[index(x, y, z)].get_value();
 }// End get_cell_value 
 
 void cell_grid::set_cell(int x, int y, int num, ...)
@@ -56,7 +56,7 @@ void cell_grid::set_cell(int x, int y, int num, ...)
 	vector<float> a;
 	for(int i = 0; i < num; ++i)
 	{
-		a.push(va_arg(ap, float));
+		a.push_back(va_arg(ap, float));
 	}
 	va_end(ap);
 	set_cell(x, y, &a);
@@ -64,7 +64,7 @@ void cell_grid::set_cell(int x, int y, int num, ...)
 
 void cell_grid::set_cell(int x, int y, vector<float>* val)
 {// .. 
-	grid[index(x, y)].set_cell(val);
+	grid[index(x, y)].set_value(val);
 }// End set_cell 
 
 void cell_grid::set_cell(int x, int y, int z, int num, ...)
@@ -74,7 +74,7 @@ void cell_grid::set_cell(int x, int y, int z, int num, ...)
 	vector<float> a;
 	for(int i = 0; i < num; ++i)
 	{
-		a.push(va_arg(ap, float));
+		a.push_back(va_arg(ap, float));
 	}
 	va_end(ap);
 	set_cell(x, y, z, &a);

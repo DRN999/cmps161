@@ -16,7 +16,7 @@ cell::cell(int o, int num, ...)
 	cell_size = 0;
 	for(int i = 0; i < num; ++i)
 	{
-		value.push(va_arg(ap, float));
+		value.push_back(va_arg(ap, float));
 		++cell_size;
 	}
 	va_end(ap);
@@ -24,7 +24,7 @@ cell::cell(int o, int num, ...)
 
 vector<float>* cell::get_value()
 {// returns vector
-	return value;
+	return &value;
 }// End get_value 
 
 int cell::get_size()
