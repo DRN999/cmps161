@@ -93,8 +93,8 @@ cell_grid* file_input::create_vtk()
 {// converts the input file into a vtk file  
 	cell_grid* ret;
 	int iter = 0;
-	array<double, m> temp;
-	array<int, dimension> res_temp;
+	array<double, this->m> temp;
+	array<int, this->dimension> res_temp;
 	if(file->is_open())
 	{
 		if(dimension == 2)
