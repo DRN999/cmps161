@@ -21,6 +21,7 @@ class file_input
 	public:
 		file_input(); // default constructor, does nothing 
 		file_input(string name); // constructor with input file name 
+		~file_input(); // destructor 
 		void close_file(); // close the file 
 		void open_file(string name); // open the file with the same name 
 		void create_vtk(); // exports a output vtk file 
