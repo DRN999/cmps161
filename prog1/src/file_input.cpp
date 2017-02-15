@@ -2,19 +2,24 @@
 #include "file_input.h"
 
 file_input::file_input()
-{
+{// empty constructor 
 	
-}
+}// End constructor 
 
 file_input::file_input(string name)
-{
+{// constructor 
 	file = new fstream();
 	file->open(name, ios::in);
 	parse_file();
-}
+}// End Constructor 
+
+file_input::~file_input()
+{// destructor 
+	
+}// End destructor 
 
 void file_input::parse_file()
-{
+{// read in the data file input 
 	if(file->is_open())
 	{
 		*file >> dimension;
@@ -43,7 +48,7 @@ void file_input::parse_file()
 									
 				}
 			}
-		}
+		} // end for i 
 	} // end if file.is_open() 
 	cout << endl << "dimension: " << dimension << endl;
 	cout << endl << "n: " << n << " m: " << m << endl;
@@ -68,26 +73,26 @@ void file_input::parse_file()
 }// End parse_file 
 
 void file_input::close_file()
-{
+{// closes the file if it is already open 
 	if(file->is_open())
 	{
 		file->close();
 		delete(file);
 	}
-}
+}// End close_file 
 
 void file_input::open_file(string name)
-{
+{// opens the file with the same name as input 
 	file = new fstream();
 	file->open(name, ios::in);
 	parse_file();
-}
+}// End open_file 
 
 void file_input::create_vtk()
-{
+{// converts the input file into a vtk file  
 	if(file->is_open())
 	{
 		cout << "i dunno what to do LUL" << endl;
 	}
-}
+}// End create_vtk 
 

@@ -1,0 +1,87 @@
+#include <iostream> 
+#include "cell_grid.h"
+#include "common.h"
+#include <cstdarg>
+
+cell_grid::cell_grid(int d, int* r)
+{
+	dimension = d;
+	res = r;
+	size = res[0];
+	for(int i = 1; i < dimension; ++i)
+	{
+		size *= res[i];
+	}
+	grid = new cell[size];
+}
+
+int cell_grid::index(int x, int y)
+{ // returns the proper index of the table for 2d 
+	return x + res[0] * y;
+}
+
+int cell_grid::index(int x, int y, int z)
+{ // returns the proper index of the table for 3d 
+	return x + res[0] * y + res[0] * res[1] * z;
+}
+
+void cell_grid::interpolate_grid()
+{
+	
+}
+
+cell* cell_grid::get_cell(int x, int y) 
+{// returns the cell of the index for 2d 
+	return grid[index(x, y)];
+}// End get_cell 
+
+cell* cell_grid::get_cell(int x, int y, int z)
+{// returns the cell of the index for 3d 
+	return grid[index(x, y, z)];
+}// End get_cell 
+
+vector<float>* cell_grid::get_cell_value(int x, int y)
+{// returns the value inside the cell for 2d
+	return grid[index(x,y)].get_value();
+}// get_cell_value 
+
+vector<float>* cell_grid::get_cell_value(int x, int y, int z)
+{// returns the value inside the cell for 3d
+	return grid[index(x, y, z)].get_value();
+}// End get_cell_value 
+
+void cell_grid::set_cell(int x, int y, int num, ...)
+{// sets cell value of index for 2d 
+	va_list ap;
+	va_start(ap, num);
+	vector<float> a;
+	for(int i = 0; i < num; ++i)
+	{
+		a.push(va_arg(ap, float));
+	}
+	va_end(ap);
+	set_cell(x, y, &a);
+}// End set_cell 
+
+void cell_grid::set_cell(int x, int y, vector<float>* val)
+{// .. 
+	grid[index(x, y)].set_cell(val);
+}// End set_cell 
+
+void cell_grid::set_cell(int x, int y, int z, int num, ...)
+{// sets cell value of index for 3d 
+	va_list ap;
+	va_start(ap, num);
+	vector<float> a;
+	for(int i = 0; i < num; ++i)
+	{
+		a.push(va_arg(ap, float));
+	}
+	va_end(ap);
+	set_cell(x, y, z, &a);
+}// End set_cell 
+
+void cell_grid::set_cell(int x, int y, int z, vector<float>* val)
+{// .. 
+	grid[index(x, y, z)].set_cell(val);
+}// End set_cell 

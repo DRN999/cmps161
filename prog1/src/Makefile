@@ -14,7 +14,7 @@
 
 CXX	=	g++
 FLAGS	=	-std=gnu++0x	-Wall 
-SOURCES	=	Interpolation.cpp	file_input.cpp
+SOURCES	=	Interpolation.cpp	file_input.cpp	cell_grid.cpp	cell.cpp
 OBJECTS	=	$(SOURCES:.cpp=.o)
 EXEBIN	=	Interpolation
 
