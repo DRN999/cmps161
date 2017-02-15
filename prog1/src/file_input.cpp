@@ -92,8 +92,8 @@ void file_input::open_file(string name)
 cell_grid* file_input::create_vtk()
 {// converts the input file into a vtk file  
 	cell_grid* ret;
+	vector<double> temp;
 	int iter = 0;
-	double temp[m];
 	array<int, 3> res_temp;
 	if(file->is_open())
 	{
@@ -106,7 +106,7 @@ cell_grid* file_input::create_vtk()
 		{
 			for(int j = 0; j = m; j++)
 			{
-				temp[m] = values.at(iter);
+				temp.push_back(values.at(iter));
 				iter++;
 			}
 			if(dimension == 2)
@@ -116,9 +116,11 @@ cell_grid* file_input::create_vtk()
 			}
 			else if (dimension == 3)
 			{
-				ret->set_cell(coordinates.at(i), coordinates.at(i+1), coordinates(i+2), (new vector<double>())->assign(temp, temp + m));
-				ret->get_cell(coordinates.at(i), coordinates.at(i+1), coordinates(i+2))->set_orig();
+				ret->set_cell(coordinates.at(i), coordinates.at(i+1), coordinates.at(i+2), (new vector<double>())->assign(temp, temp + m));
+				ret->get_cell(coordinates.at(i), coordinates.at(i+1), coordinates.at(i+2))->set_orig();
 			}
+			for(int j = 0; j < m; j++)
+				temp.pop_back();
 		}
 	}
 	return ret;
