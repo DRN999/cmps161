@@ -16,7 +16,7 @@ cell::cell(int o, int num, ...)
 	cell_size = 0;
 	for(int i = 0; i < num; ++i)
 	{
-		value.push_back(va_arg(ap, double));
+		value->push_back(va_arg(ap, double));
 		++cell_size;
 	}
 	va_end(ap);
@@ -44,7 +44,7 @@ int cell::is_orig()
 
 void cell::add_value(vector<double>* a)
 {// concatnates the input vector with current vector
-	value->insert(value.end(), a->begin(), a->end());
+	value->insert(value->end(), a->begin(), a->end());
 }// End add_value 
 
 void cell::set_value(vector<double>* a)
