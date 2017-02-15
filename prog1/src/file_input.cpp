@@ -88,7 +88,7 @@ void file_input::open_file(string name)
 	parse_file();
 }// End open_file 
 
-cell_grid file_input::create_vtk()
+cell_grid* file_input::create_vtk()
 {// converts the input file into a vtk file  
 	cell_grid* ret;
 	int iter = 0;

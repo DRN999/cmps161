@@ -33,12 +33,12 @@ void cell_grid::interpolate_grid()
 
 cell* cell_grid::get_cell(int x, int y) 
 {// returns the cell of the index for 2d 
-	return &grid[index(x, y)];
+	return grid[index(x, y)];
 }// End get_cell 
 
 cell* cell_grid::get_cell(int x, int y, int z)
 {// returns the cell of the index for 3d 
-	return &grid[index(x, y, z)];
+	return grid[index(x, y, z)];
 }// End get_cell 
 
 vector<double>* cell_grid::get_cell_value(int x, int y)
