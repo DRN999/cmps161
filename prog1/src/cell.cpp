@@ -1,6 +1,6 @@
 #include <iostream> 
 #include "cell.h" 
-#include "common.h"
+#include "Common.h"
 #include <cstdarg>
 
 cell::cell()
