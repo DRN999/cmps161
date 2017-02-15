@@ -52,3 +52,9 @@ void cell::set_value(vector<double>* a)
 	value = *a;
 }// End set_value 
 
+void cell::set_orig()
+{// set orig to true 
+	orig = 1;
+}// End set_orig 
+
+

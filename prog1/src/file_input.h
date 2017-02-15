@@ -1,6 +1,7 @@
 #include <fstream> 
 #include <string>
 #include <vector>
+#include "cell_grid.h"
 
 #ifndef FILE_INPUT
 #define FILE_INPUT 
@@ -12,7 +13,7 @@ class file_input
 	private: 
 		fstream* file; // the input file itself 
 		int dimension; // dimensions of the data  
-		int n, m; // the number of components and the number of coordinates per component 
+		int n, m; // the number of components and the number of component per coordinate 
 		vector<float> values; // values of the coordinate(s) 
 		vector<int> coordinates; // the coordinate values 
 		vector<int> res;
@@ -24,7 +25,7 @@ class file_input
 		~file_input(); // destructor 
 		void close_file(); // close the file 
 		void open_file(string name); // open the file with the same name 
-		void create_vtk(); // exports a output vtk file 
+		cell_grid* create_vtk(); // exports a output vtk file 
 };
 
 
