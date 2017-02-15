@@ -8,7 +8,7 @@
 class cell_grid
 {
 	private:
-		cell* grid; // array of grid 
+		cell** grid; // array of grid 
 		int dimension; // the dimension of the array
 		int size; // size of grid 
 		int* res; // the resolution of each axis 

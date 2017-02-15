@@ -11,7 +11,7 @@ cell_grid::cell_grid(int d, int* r)
 	{
 		size *= res[i];
 	}
-	grid = new cell*[size];
+	grid = new *cell[size];
 	for(int i = 0; i < size; i++)
 		grid[i] = new cell();
 }
