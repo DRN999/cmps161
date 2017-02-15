@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 #include "file_input.h"
 
 file_input::file_input()
@@ -25,7 +26,7 @@ void file_input::parse_file()
 		*file >> dimension;
 		*file >> n;
 		*file >> m;
-		float temp_f = 0;
+		double temp_f = 0.0;
 		for(int i = 0; i < n + 1; ++i)
 		{
 			if(i == n)
@@ -53,7 +54,7 @@ void file_input::parse_file()
 	cout << endl << "dimension: " << dimension << endl;
 	cout << endl << "n: " << n << " m: " << m << endl;
 	cout << endl << "values :" << endl;
-	for(vector<float>::const_iterator i = values.begin(); i != values.end(); ++i)
+	for(vector<double>::const_iterator i = values.begin(); i != values.end(); ++i)
 		cout << *i << endl;
 	
 	cout << endl << "coordinates: " << endl;
@@ -92,15 +93,15 @@ cell_grid* file_input::create_vtk()
 {// converts the input file into a vtk file  
 	cell_grid* ret;
 	int iter = 0;
-	double* temp[m];
-	int* res_temp[dimension];
+	array<double, m> temp;
+	array<int, dimension> res_temp;
 	if(file->is_open())
 	{
 		if(dimension == 2)
 			res_temp = {res.at(0), res.at(1)};
 		else if(dimension == 3)
 			res_temp = {res.at(0), res.at(1), res.at(2)};
-		ret = new cell_grid(dimension, res_temp);
+		ret = new cell_grid(dimension, res_temp.data());
 		for(int i = 0; i = n; i+=dimension)
 		{
 			for(int j = 0; j = m; j++)

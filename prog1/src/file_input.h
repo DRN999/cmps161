@@ -14,7 +14,7 @@ class file_input
 		fstream* file; // the input file itself 
 		int dimension; // dimensions of the data  
 		int n, m; // the number of components and the number of component per coordinate 
-		vector<float> values; // values of the coordinate(s) 
+		vector<double> values; // values of the coordinate(s) 
 		vector<int> coordinates; // the coordinate values 
 		vector<int> res;
 		void parse_file();
