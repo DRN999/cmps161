@@ -1,0 +1,42 @@
+CMPS 161 Lecture Notes 10
+
+Multivariate -> multi-dimensional 
+3 variables -> 3d -> 3d scatter plot 
+don't know if it is actually linear, need to see it from a different view point or else it can possibly be a surface 
+we can check this by making rotations 
+
+Plotting points in high dimensional space n-dimensional space 
+- plot points in n-dimensional space - then project it down to 2d 
+- rotation in 3d: Rx, Ry, Rz : each of these form of their own rotaion matrices 
+- can essentially do the same thing here 
+- R = R_1 ... R_n  - all represented by n-by-n matrices 
+- ??? feelshardtovisualizeman 
+- Ex: four dimensional space 
+- gets 5 rotation matrix from the 4th dimension, one of them are not linearlly aligned with other(?) 
+- projection, pursuit, grand tour 
+- what is a good projection? 
+- hyperbox: 3, 2d scatterplots 
+- n-by-n matrix 
+- scatterplot matrix: n-by-n array, each have a scatterplot, matrix is symmetric 
+- dimensional stacking - world within world, trellis display 
+- we can only do some much laying out the data 
+- hard to see relationship between the 4 varaible is difficult 
+- three methods - PCA, MDS, ICA 
+
+PCA - principle component analysis: 
+- somewhat similar to dimensional stacking, instead figure out the 2 different components 
+- components are linear combination of varaibles 
+- tries to find and rank* the important component 
+- tries to maximize the variance in the projected space 
+- Given: d data points in N-dimensions 
+	1 - create data matrix d X N 
+	2 - remove the mean:
+		- x' = x - _X 
+	3 - SIGMA() = convariance of x' = x' * x^T = (d X N)(N X d) = d X d = symmetric positive defense 
+	4 - eigenvalue decomposition SIGMA() 
+		-> LAMDA_1 ... LAMDA_d
+		-> e_1 ... e_d
+	5 - sort LAMDA - eigenvalue associated with it are the components 
+	
+
+	
