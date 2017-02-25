@@ -18,11 +18,16 @@ cell_grid::cell_grid(int d, int* r)
 
 int cell_grid::index(int x, int y)
 { // returns the proper index of the table for 2d 
+	x += res[0]/2;
+	y += res[1]/2;
 	return x + res[0] * y;
 }
 
 int cell_grid::index(int x, int y, int z)
 { // returns the proper index of the table for 3d 
+	x += res[0]/2;
+	y += res[1]/2;
+	z += res[2]/2;
 	return x + res[0] * y + res[0] * res[1] * z;
 }
 
