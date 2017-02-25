@@ -47,7 +47,7 @@ Dimension space/time
 0D(one point),1D, 2D, 3D, T
 
 Degree
-Scaler, vecor, tensor
+Scaler, vector, tensor
 
 Dimension vs Degree, classify datasets and visualize them accordingly
 Ex. 2d & vector -> specific visualization of 2d vector

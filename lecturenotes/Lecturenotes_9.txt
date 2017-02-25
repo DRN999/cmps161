@@ -1,0 +1,33 @@
+CMPS 161 Lecture Notes 9
+
+Prog2: 
+- streamgraph - take that streamgraph, based on zero line, and turn it into a circle 
+- problem: if want to make it into a circle, there is going to be some kind of discontinuity 
+- it might not be ideal beacauce of that 
+- sampling - connecting two points with a line has an indication 
+- would it make sense to extrapolate the line to predict the next position? 
+- when drawing the lines, we are assuming that is right to do 
+- when might be missing the information/trend inbetween the lines 
+- we can make a linear assumption, but needs to be careful *stiching 
+- streamlines do that between every points? 
+- talk about how to do in lab, akaash help plz 
+- corona - squiggly line around circle in nutshell -+
+- also inside the circle as well 
+- circular streamgraph display 
+- stacking streamgraphs? regular corona has circle in the middle, do not touch the base line(straight) 
+- display first cycle, display second cycle by adding another cycle on top of first one - option 
+- use some time into 
+- everything start from zero and depending on the data you can change up and stuff I think feelskindaconfusedman
+
+Lecture: 
+- infovis data 
+- Multivariate data:
+- star plot/ rose diagram 
+- chernoff faces 
+- Parallel coordinates allows you to show relation between glphys - might look like a mess but may see some habits 
+
+Techniques:
+- statistical 
+- layout 
+- distortion 
+- interaction 
