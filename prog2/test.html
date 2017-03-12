@@ -1,0 +1,132 @@
+<html>
+	
+	<head>
+		<title>test</title>
+		<style>
+			body 
+			{
+				font: 10px sans-serif;
+			}
+
+			.axis line 
+			{
+				stroke: #000;
+			}
+
+			.axis path 
+			{
+				fill: none;
+				stroke: #000;
+			}
+
+			.axis + .axis g text 
+			{
+				display: none;
+			}
+		</style>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+	</head>
+	
+	<body>
+		
+	
+		<script>
+			var data = [ // data original 
+				{key: 'a', value: 37, time: 0},
+				{key: 'b', value: 12, time: 0},
+				{key: 'c', value: 46, time: 0},
+				{key: 'a', value: 32, time: 1},
+				{key: 'b', value: 19, time: 1},
+				{key: 'c', value: 42, time: 1},
+				{key: 'a', value: 45, time: 2},
+				{key: 'b', value: 16, time: 2},
+				{key: 'c', value: 44, time: 2},
+				{key: 'a', value: 24, time: 3},
+				{key: 'b', value: 52, time: 3},
+				{key: 'c', value: 64, time: 3},
+				{key: 'a', value: 25, time: 4},
+				{key: 'b', value: 39, time: 4},
+				{key: 'c', value: 29, time: 4},
+				{key: 'a', value: 34, time: 5},
+				{key: 'b', value: 59, time: 5},
+				{key: 'c', value: 44, time: 5},
+				{key: 'a', value: 40, time: 6},
+				{key: 'b', value: 28, time: 6},
+				{key: 'c', value: 21, time: 6}
+			]; 
+			
+			var re_data = [ // data re-arranged 
+				{time: 0, a: 37, b: 12, c: 46},
+				{time: 1, a: 32, b: 19, c: 42},
+				{time: 2, a: 45, b: 116, c: 44},
+				{time: 3, a: 24, b: 52, c: 64},
+				{time: 4, a: 25, b: 39, c: 29},
+				{time: 5, a: 34, b: 59, c: 44},
+				{time: 6, a: 43, b: 30, c: 20}
+			];
+			
+			
+			var cyclic_data = function(d)
+			{
+				var ret = d.slice();
+				var temp = {time: ret.length, a: ret[0].a, b: ret[0].b, c: ret[0].c};
+				ret.push(temp);
+				return ret;
+			};
+			
+			var c_re_data = cyclic_data(re_data);
+			console.log(re_data);
+			console.log(c_re_data);
+		
+			var width = 960;
+			var height = 500;
+			
+			
+			///* // code for simple stacked area graph 
+			
+			var outerRadius = height / 2 -10;
+			var innerRadius = 120;
+			
+			var angle = d3.scaleTime()
+				.domain([0,7])
+				.range([0, 2 * Math.PI]);
+			
+			var radius = d3.scaleLinear()
+				.domain([0,150])
+				.range([innerRadius, outerRadius]);
+			
+			var z = d3.scaleOrdinal(d3.schemeCategory20)
+				.domain(['a', 'b', 'c']);
+			
+			var stack = d3.stack()
+				.keys(['a', 'b', 'c']);
+				
+			//console.log(stack(c_re_data));
+			
+			var area = d3.radialArea()
+				.angle((d, i) => angle(d.data.time))
+				.innerRadius((d) => radius(d[0]))
+				.outerRadius((d) => radius(d[1]));
+				
+			var canvas = d3.select('body')
+				.append('svg')
+				.attr('width', width)
+				.attr('height', height);
+			
+			var group = canvas.append('g');
+			
+			var layer = group.selectAll('.layer')
+				.data(stack(c_re_data))
+				.enter().append('g')
+					.attr('class', 'layer')
+					.attr('transform', 'translate(' + width/2 + ',' + height/2 + ')');
+			
+			layer.append('path') 
+				.attr('class', 'area')
+				.style('fill', (d) => z(d.key))
+				.attr('d', area);
+			
+		</script>
+	
+	</body>
+</html>
