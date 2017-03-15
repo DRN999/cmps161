@@ -1,20 +1,80 @@
 <html>
+	
 	<head>
+		<title>Noriaki Nakano Prog2 Cyclic Streamgraph</title>
 		<style>
+			#svg 
+			{
+				border-style: solid;
+				border-width: 1px;
+			}
+			
+			#user_interface
+			{
+				border-style: solid;
+				border-width: 1px;
+				height: 750;
+			}
+			
+			#output
+			{
+				border-style: solid;
+				border-width: 1px;
+			}
 			
 		</style>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
 	</head>
 	
-	<body onload="main()">
+	<body onload = "main()">
 		
-		<script src="lib/d3/d3.min.js"></script>
-		<script src="lib/jit/jit.js"></script>
-		<script src="source/SunBurstLevels.js"></script>
-		<script src="source/main.js"></script>
-		<div id = "infovis"></div>
+		<table> <!-- table begin -->
+		
+			<tr>
+				<th>
+					<div id = 'user_interface'>
+						<table id = 'data_input'> <!-- table begin -->
+						
+							<tr>
+								<th># of layers: </th>
+								<th><input type='text' id = 'size_layer' value = '10' style="width:50px"></input></th>
+							</tr>
+							
+							<tr>
+								<th># of samples per layer: </th>
+								<th><input type='text' id = 'sample_size' value = '100' style="width:50px"></input></th>
+							</tr>
+							
+							<tr>
+								<th>bump percent: </th>
+								<th><input type='text' id = 'bump_percent' value = '0.5' style="width:50px"></input></th>
+							</tr>
+							
+							<tr>
+								<th>Interpolation constant: </th>
+								<th><input type='text' id = 'interpolation_constant' value = '10' style="width:50px"></input></th>
+							</tr>
+						
+							<tr>
+								<th colspan = '2'> <button id = 'submit' type = 'button'>Submit data</button>
+							</tr>
+						
+						</table> <!-- table end -->
+					</div>
+				</th>
+				<th>
+					<div id = 'svg'></div>
+				</th>
+			</tr>
+			
+			<tr>
+				<th colspan = '2'>
+					<div id = 'output'><p></p></div>
+				</th>
+			</tr>
+		</table> <!-- table end -->
+		
+		
+		<script src = 'cyclic_streamgraph.js'></script>
 	</body>
-	
-
-
-
 </html>
